@@ -24,8 +24,9 @@ EXPLOSION=pygame.image.load('explotion.png')
 INJURY=pygame.image.load('injury.png')
 INJURY_SIZE=(SCREEN_X/MATRICS_X*4,SCREEN_Y/MATRICS_Y*2)
 
-SOLDIER=pygame.image.load('soldier.png')
+SOLDIER_IMG=pygame.image.load('soldier.png')
 SOLDIER_SIZE=INJURY_SIZE
+SOLDIER=pygame.transform.scale(SOLDIER_IMG,SOLDIER_SIZE)
 START_SOLDIER=(0, 0)
 
 
