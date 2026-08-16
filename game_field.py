@@ -14,23 +14,21 @@ from consts import XRAY_COLOR, MATRICS_Y, MATRICS_X
 #         spot = random.choice(main.MATRIX)
 #         print(spot)
 
-def ENTER():
-    # פה זה צריך ללכת למסך השנילמשך כמה שניות
+def banans():
     screen = pygame.display.set_mode((consts.SCREEN_X, consts.SCREEN_Y))
     screen.fill(XRAY_COLOR)
     for row in range(MATRICS_Y):
         for column in range(MATRICS_X):
-            pygame.draw.rect(screen, (9, 99, 0),
-                             [20 * column + 1,
-                              20 * row + 1,
-                              20,
-                              20], 1)
+            pygame.draw.rect(screen, (9, 99, 0),[20 * column + 1,20 * row + 1,20,20], 1)
     pygame.display.flip()
     running = True
     while running:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
+    return
+
+
 def DOWN():
     pass
 
@@ -59,6 +57,6 @@ def RIGHT():
 #             running = True
 #     pygame.display.flip()
 #     clock.tick(60)
-screenfile.screen_create()
-ENTER()
+# screenfile.screen_create()
+banans()
 # spawn_mines()
