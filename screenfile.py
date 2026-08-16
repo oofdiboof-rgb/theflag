@@ -25,4 +25,3 @@ def spawn_grass():
 def spawn_mine():
     for i in range(20):
         screen.blit(consts.MINE, ((random.choice(range(int(consts.SCREEN_X-consts.MINE_SIZE[0])))), random.choice(range(int(consts.SCREEN_Y-consts.MINE_SIZE[1])))))
-screen_create()

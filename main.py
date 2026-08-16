@@ -1,7 +1,7 @@
 import pygame
 
 import game_field
-import screen
+import screenfile
 
 MATRIX=[]
 def main():
