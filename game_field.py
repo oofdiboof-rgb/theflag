@@ -1,14 +1,26 @@
 import pygame
-import screen
-import consts
 
+import main
+import screenfile
+import consts
+import random
+
+from consts import XRAY_COLOR
+
+
+#
+# def spawn_mines():
+#     for i in range(20):
+#         spot = random.choice(main.MATRIX)
+#         print(spot)
 
 def ENTER():
     # פה זה צריך ללכת למסך השנילמשך כמה שניות
-    screen.screen.fill(consts.XRAY_COLOR)
+    screen = pygame.display.set_mode((consts.SCREEN_X, consts.SCREEN_Y))
+    screen.fill(XRAY_COLOR)
     for row in range(25):
         for column in range(50):
-            pygame.draw.rect(screen, consts.NORMAL_COLOR,
+            pygame.draw.rect(screen, (9, 99, 0),
                              [20 * column + 1,
                               20 * row + 1,
                               20,
@@ -46,5 +58,6 @@ def RIGHT():
 #             running = True
 #     pygame.display.flip()
 #     clock.tick(60)
-# screen.create_screen()
+screenfile.screen_create()
 ENTER()
+# spawn_mines()
