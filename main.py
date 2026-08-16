@@ -3,7 +3,9 @@ import pygame
 import game_field
 import screen
 
+MATRIX=[]
 def main():
+    create_matrix()
     # להוסיף את פונקציה של המסך הירוק
     while 1>0:
         for event in pygame.event.get():
@@ -18,5 +20,10 @@ def main():
             elif event.type == pygame.K_RIGHT:
                 game_field.RIGHT()
         # if החייל נוגע במוקש - אז להתפוצץ- נפסל
-        # אם החייל פוגע בדגל- אז ניצח
-        # לשנות את המסך לפי התזוזה של החייל
+        # אם החייל פוגע בדגל- אז ניצחון
+
+def create_matrix():
+        for row in range(25):
+            MATRIX.append([])
+            for col in range(50):
+                MATRIX[row].append('0')
