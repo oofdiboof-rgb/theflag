@@ -9,33 +9,15 @@ def screen_create():
     global screen
     screen = pygame.display.set_mode((consts.SCREEN_X, consts.SCREEN_Y))
     clock = pygame.time.Clock()
-    xray = False
-    running = True
-
+    screen.fill(NORMAL_COLOR)
     spawn_grass()
-    spawn_mine()
-    screen.blit(consts.SOLDIER, START_SOLDIER)
-    screen.blit(consts.FLAG, FLAG_START)
-    while True:
-
-        while running:
-            screen.fill(NORMAL_COLOR)
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    running = False
-                    xray = True
-            pygame.display.flip()
-            clock.tick(60)
-        while xray:
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    screen.fill(XRAY_COLOR)
-                    pygame.time.wait(1000)
-                    xray = False
-                    running = True
-            pygame.display.flip()
-            clock.tick(60)
-
+    running = True
+    while running:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+        pygame.display.flip()
+        clock.tick(60)
 
 def spawn_grass():
     for i in range(20):
