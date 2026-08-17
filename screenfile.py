@@ -2,7 +2,7 @@ import pygame
 import random
 import consts
 import game_field
-from consts import START_SOLDIER, FLAG_START, NORMAL_COLOR, XRAY_COLOR
+from consts import FLAG_START, NORMAL_COLOR, XRAY_COLOR, FLAG
 
 
 def screen_create():
@@ -12,11 +12,13 @@ def screen_create():
     screen = pygame.display.set_mode((consts.SCREEN_X, consts.SCREEN_Y))
     clock = pygame.time.Clock()
     screen.fill(NORMAL_COLOR)
-    for i in grass_places:
-        screen.blit(consts.GRASS, i)
+    # game_field.spawn_mines(screen)
+    for coords in grass_places:
+        screen.blit(consts.GRASS, coords)
     # game_field.spawn_mines(screen)
     # screen.blit(consts.SOLDIER, START_SOLDIER)
     # screen.blit(consts.SOLDIER, START_SOLDIER)
+    screen.blit(FLAG, FLAG_START)
     pygame.display.flip()
     clock.tick(60)
 

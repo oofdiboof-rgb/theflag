@@ -14,8 +14,9 @@ def create_matrix():
         for j in range(4):
             consts.MATRIX[i+22][j+46] = "DEGEL"
 
-def spawn_mines(screen):
+def mines_list(screen):
     create_matrix()
+    mine_places = []
     for mines in range(20):
         BOOL = True
         while BOOL:
@@ -23,15 +24,20 @@ def spawn_mines(screen):
             spot = random.choice(range(len(consts.MATRIX[row]) - 2))
             if (consts.MATRIX[row][spot] or consts.MATRIX[row][spot + 1] or consts.MATRIX[row][spot + 2]) == 0:
                 BOOL = False
-        screen.blit(consts.MINE, ((consts.GRID_POS_X*spot, consts.GRID_POS_Y*row)))
         consts.MATRIX[row][spot] = "MINE"
-        consts.MATRIX[row][spot+1] = "MINE"
-        consts.MATRIX[row][spot+2] = "MINE"
+        consts.MATRIX[row][spot + 1] = "MINE"
+        consts.MATRIX[row][spot + 2] = "MINE"
+        mine_places.append([row, spot])
         BOOL = True
+    return mine_places
+    # print(mine_places[1][1])
+    # for i in consts.MATRIX:
+    #     print(i)
 
-    for i in consts.MATRIX:
-        print(i)
-
+def spawn_mines(screen):
+    mine_spots = mines_list(screen)
+    for i in mine_spots:
+        screen.blit(consts.MINE, ((consts.GRID_POS_X * i[1], consts.GRID_POS_Y * i[0])))
 
 
 # screen.blit(consts.FLAG, FLAG_START)
