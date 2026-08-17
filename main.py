@@ -18,12 +18,12 @@ def aaa():
                 if event.key == pygame.K_RETURN:
                     print("esdfg")
                     game_field.banans()
-                    # elif event.type == pygame.K_LEFT:
-                    #     print("hgf")
-                    #     LEFT()
-                    # elif event.type == pygame.K_RIGHT:
-                    #     print("hgfhg")
-                    #     RIGHT()
+                elif event.type == pygame.K_LEFT:
+                    print("hgf")
+                    game_field.left()
+                elif event.type == pygame.K_RIGHT:
+                    print("hgfhg")
+                    game_field.right()
             # if החייל נוגע במוקש - אז להתפוצץ- נפסל
             # אם החייל פוגע בדגל- אז ניצחון
 
