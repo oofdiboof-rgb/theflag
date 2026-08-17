@@ -12,9 +12,7 @@ def screen_create():
     screen.fill(NORMAL_COLOR)
     spawn_grass()
     # screen.blit(consts.SOLDIER, START_SOLDIER)
-    running = True
     # screen.blit(consts.SOLDIER, START_SOLDIER)
-
     pygame.display.flip()
     clock.tick(60)
 
