@@ -29,6 +29,6 @@ INJURY = pygame.image.load('injury.png')
 INJURY_SIZE = (X_SOLDIER, Y_SOLDIER)
 
 SOLDIER_IMG = pygame.image.load('soldier.png')
-SOLDIER_SIZE = INJURY_SIZE
-SOLDIER = (X_SOLDIER, Y_SOLDIER)
+SOLDIER_SIZE = (X_SOLDIER, Y_SOLDIER)
+SOLDIER = pygame.transform.scale(SOLDIER_IMG, SOLDIER_SIZE)
 START_SOLDIER = (0, 0)

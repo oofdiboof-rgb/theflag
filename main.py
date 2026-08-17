@@ -4,7 +4,6 @@ import screenfile
 import soldier
 from consts import XRAY_COLOR, MATRICS_Y, MATRICS_X
 import sys
-MATRIX=[]
 
 def main():
     screenfile.screen_create()
@@ -49,8 +48,8 @@ def enter():
 
 
 def down():
-    X_SOLDIER=(SCREEN_X / MATRICS_X * 2)-1
-    print(s)
+    consts.Y_SOLDIER-=1
+    print(soldier.create_soldier)
     pass
 
 
@@ -62,10 +61,6 @@ def left():
 
 def right():
     pass
-def create_matrix():
-        for row in range(consts.MATRICS_Y):
-            MATRIX.append([])
-            for col in range(consts.MATRICS_X):
-                MATRIX[row].append('0')
+
 main()
 
