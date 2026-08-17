@@ -11,15 +11,12 @@ def screen_create():
     clock = pygame.time.Clock()
     screen.fill(NORMAL_COLOR)
     spawn_grass()
-    screen.blit(consts.SOLDIER, START_SOLDIER)
+    # screen.blit(consts.SOLDIER, START_SOLDIER)
     running = True
     # screen.blit(consts.SOLDIER, START_SOLDIER)
-    while running:
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                running = False
-        pygame.display.flip()
-        clock.tick(60)
+
+    pygame.display.flip()
+    clock.tick(60)
 
 
 def spawn_grass():

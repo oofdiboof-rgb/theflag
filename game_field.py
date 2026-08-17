@@ -58,5 +58,5 @@ def right():
 #     pygame.display.flip()
 #     clock.tick(60)
 # screenfile.screen_create()
-banans()
+# banans()
 # spawn_mines()
