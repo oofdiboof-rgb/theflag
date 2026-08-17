@@ -29,16 +29,16 @@ def banans():
     return
 
 
-def DOWN():
+def down():
     pass
 
-def UP():
+def up():
     pass
 
-def LEFT():
+def left():
     pass
 
-def RIGHT():
+def right():
     pass
 
 # screen.blit(consts.FLAG, FLAG_START)
