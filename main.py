@@ -48,19 +48,24 @@ def enter():
 
 
 def down():
-    consts.Y_SOLDIER-=1
-    print(soldier.create_soldier)
+    if 0 < consts.Y_SOLDIER + consts.GRID_POS_Y < consts.SCREEN_Y:
+        consts.Y_SOLDIER += consts.GRID_POS_Y
     pass
 
 
 def up():
+    if 0<consts.Y_SOLDIER-consts.GRID_POS_Y < consts.SCREEN_Y:
+        consts.Y_SOLDIER -= consts.GRID_POS_Y
     pass
 
 def left():
+    if 0 < consts.X_SOLDIER - consts.GRID_POS_X < consts.SCREEN_X:
+        consts.X_SOLDIER -= consts.GRID_POS_X
     pass
 
 def right():
+    if 0<consts.X_SOLDIER + consts.GRID_POS_X<consts.SCREEN_X:
+        consts.X_SOLDIER += consts.GRID_POS_X
     pass
 
 main()
-

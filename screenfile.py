@@ -1,7 +1,8 @@
 import pygame
 import random
 import consts
-from consts import START_SOLDIER, FLAG_START, NORMAL_COLOR, XRAY_COLOR
+import soldier
+from consts import  FLAG_START, NORMAL_COLOR, XRAY_COLOR
 
 
 def screen_create():
@@ -11,10 +12,11 @@ def screen_create():
     clock = pygame.time.Clock()
     screen.fill(NORMAL_COLOR)
     spawn_grass()
+    soldier.create_soldier(screen)
     # screen.blit(consts.SOLDIER, START_SOLDIER)
     # screen.blit(consts.SOLDIER, START_SOLDIER)
     pygame.display.flip()
-    clock.tick(60)
+    # clock.tick(60)
 
 
 def spawn_grass():
