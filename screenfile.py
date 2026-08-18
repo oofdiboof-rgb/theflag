@@ -3,6 +3,8 @@ import random
 import consts
 import game_field
 from consts import FLAG_START, NORMAL_COLOR, XRAY_COLOR, FLAG
+import time
+import sys
 
 def screen_create():
     pygame.init()
@@ -44,13 +46,29 @@ def create_night_soldier():
     screen.blit(consts.SOLDIER_NIGHT, consts.XY_SOLDIER)
 
 def win():
-    screen.fill((200,200, 200))
-    WIN = pygame.font.SysFont('freesansbold.ttf', 200)
-    font = WIN.render('you won!!', False, 'gold')
+    WIN = pygame.font.SysFont('comic sans', 100)
+    font = WIN.render('you won!!', False, 'gold', (250,250, 250))
     screen.blit(font, (50, 50))
+    pygame.display.flip()
+    running = True
+    while running:
+        time.sleep(3)
+        running = False
 
-def lose():
-    screen.fill((200,200, 200))
-    LOSE = pygame.font.SysFont('freesansbold.ttf', 200)
-    font = LOSE.render('you LOSE!!', False, 'gold')
+def lose(x, y):
+    screen.blit(consts.EXPLOSION, (x,y))
+    pygame.display.flip()
+    running = True
+    while running:
+        time.sleep(1)
+        running = False
+    screen.fill(0)
+    LOSE = pygame.font.SysFont('comic sans', 100)
+    font = LOSE.render('you LOSE!!', False, 'gold', (250,250, 250))
     screen.blit(font, (50, 50))
+    pygame.display.flip()
+    running = True
+    while running:
+        time.sleep(3)
+        running = False
+    sys.exit()
