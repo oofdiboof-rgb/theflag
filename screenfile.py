@@ -39,7 +39,18 @@ def create_soldier():
     pygame.display.flip()
     screen.blit(consts.SOLDIER, consts.XY_SOLDIER)
 
-
 def create_night_soldier():
     pygame.display.flip()
     screen.blit(consts.SOLDIER_NIGHT, consts.XY_SOLDIER)
+
+def win():
+    screen.fill((200,200, 200))
+    WIN = pygame.font.SysFont('freesansbold.ttf', 200)
+    font = WIN.render('you won!!', False, 'gold')
+    screen.blit(font, (50, 50))
+
+def lose():
+    screen.fill((200,200, 200))
+    LOSE = pygame.font.SysFont('freesansbold.ttf', 200)
+    font = LOSE.render('you LOSE!!', False, 'gold')
+    screen.blit(font, (50, 50))
