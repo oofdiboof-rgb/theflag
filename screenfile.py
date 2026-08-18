@@ -9,9 +9,12 @@ def screen_create():
     global screen
     clock = pygame.time.Clock()
     screen.fill(NORMAL_COLOR)
-    screen.blit(FLAG, FLAG_START)
+    Font = pygame.font.SysFont('xkl', 30)
+    font= Font.render('Welcome to The Flag game.\n Have Fun!', False, 'orange')
+    screen.blit(font, (consts.GRID_POS_X*2, 0))
     for coords in grass_places:
         screen.blit(consts.GRASS, coords)
+    screen.blit(FLAG, FLAG_START)
     create_soldier()
     # game_field.spawn_mines(screen)
     # screen.blit(consts.SOLDIER, START_SOLDIER)
