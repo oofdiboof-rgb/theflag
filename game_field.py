@@ -33,9 +33,8 @@ def mines_list(screen):
     # print(mine_places[1][1])
     # for i in consts.MATRIX:
     #     print(i)
-
+mine_spots = mines_list(screenfile.screen)
 def spawn_mines(screen):
-    mine_spots = mines_list(screen)
     for i in mine_spots:
         screen.blit(consts.MINE, ((consts.GRID_POS_X * i[1], consts.GRID_POS_Y * i[0])))
 

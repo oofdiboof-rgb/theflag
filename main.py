@@ -44,7 +44,7 @@ def enter():
     for row in range(MATRICS_Y):
         for column in range(MATRICS_X):
             pygame.draw.rect(screen, (9, 99, 0),[20 * column + 1,20 * row + 1,20,20], 1)
-    mine_spots = game_field.mines_list(screen)
+    mine_spots = game_field.mine_spots
     for i in mine_spots:
         screen.blit(consts.MINE, ((consts.GRID_POS_X * i[1], consts.GRID_POS_Y * i[0])))
     pygame.display.flip()
