@@ -1,18 +1,9 @@
 import screenfile
 import pygame
-import random
 import consts
 import time
 import game_field
-from consts import XRAY_COLOR, MATRICS_Y, MATRICS_X, MINE
-
-
-# מיקום רגליים
-# מיקום שאר הגוף
-# למצוא איפה זה במטריצה
-# ifים
-# פוגע מוקש -פוצץ
-# פוגע דגל- ניצחון
+from consts import XRAY_COLOR, MATRICS_Y, MATRICS_X
 def enter():
     screen = pygame.display.set_mode((consts.SCREEN_X, consts.SCREEN_Y))
     screen.fill(XRAY_COLOR)

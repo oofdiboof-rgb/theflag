@@ -1,9 +1,6 @@
-import pygame
 import screenfile
 import consts
 import random
-
-from consts import MATRIX
 
 
 def create_matrix():
@@ -12,10 +9,10 @@ def create_matrix():
         for col in range(consts.MATRICS_X):
             list.append(0)
         consts.MATRIX.append(list)
-        list=[]
+        list = []
     for i in range(4):
         for j in range(4):
-            consts.MATRIX[i+21][j+46] = "DEGEL"
+            consts.MATRIX[i + 21][j + 46] = "DEGEL"
     for i in range(4):
         for j in range(2):
             consts.MATRIX[i][j] = "SOLDIER"
@@ -37,41 +34,11 @@ def mines_list(screen):
         mine_places.append([row, spot])
         BOOL = True
     return mine_places
-    # print(mine_places[1][1])
-    # for i in consts.MATRIX:
-    #     print(i)
+
+
 mine_spots = mines_list(screenfile.screen)
+
+
 def spawn_mines(screen):
     for i in mine_spots:
         screen.blit(consts.MINE, ((consts.GRID_POS_X * i[1], consts.GRID_POS_Y * i[0])))
-
-
-# screen.blit(consts.FLAG, FLAG_START)
-# def spawn_mine():
-#     for i in range(20):
-#         screen.blit(consts.MINE, ((random.choice(range(int(consts.SCREEN_X-consts.MINE_SIZE[0])))), random.choice(range(int(consts.SCREEN_Y-consts.MINE_SIZE[1])))))
-# while xray:
-#     for event in pygame.event.get():
-#         spawn_mine()
-#
-#         screen.blit(consts.FLAG, FLAG_START)
-#         if event.type == pygame.QUIT:
-#             screen.fill(XRAY_COLOR)
-#             pygame.time.wait(1000)
-#             xray = False
-#             running = True
-#     pygame.display.flip()
-#     clock.tick(60)
-# screenfile.screen_create()
-# banans()
-# spawn_mines()
-
-#
-# draw_screen-
-#
-# draw_grid-
-#
-# if visible:
-#     draw_screen --
-# else:
-#     draw
