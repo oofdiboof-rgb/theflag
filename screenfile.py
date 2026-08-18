@@ -9,9 +9,9 @@ def screen_create():
     global screen
     clock = pygame.time.Clock()
     screen.fill(NORMAL_COLOR)
-    create_soldier()
     for coords in grass_places:
         screen.blit(consts.GRASS, coords)
+    create_soldier()
     # game_field.spawn_mines(screen)
     # screen.blit(consts.SOLDIER, START_SOLDIER)
     # screen.blit(consts.SOLDIER, START_SOLDIER)
