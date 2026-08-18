@@ -9,7 +9,7 @@ def screen_create():
     global screen
     clock = pygame.time.Clock()
     screen.fill(NORMAL_COLOR)
-    Font = pygame.font.SysFont('xkl', 30)
+    Font = pygame.font.SysFont('comic sans', 18)
     font= Font.render('Welcome to The Flag game.\n Have Fun!', False, 'orange')
     screen.blit(font, (consts.GRID_POS_X*2, 0))
     for coords in grass_places:
