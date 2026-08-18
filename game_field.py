@@ -3,16 +3,23 @@ import screenfile
 import consts
 import random
 
+from consts import MATRIX
 
 
 def create_matrix():
+    list = []
     for row in range(consts.MATRICS_Y):
-        consts.MATRIX.append([])
         for col in range(consts.MATRICS_X):
-            consts.MATRIX[row].append(0)
+            list.append(0)
+        consts.MATRIX.append(list)
+        list=[]
     for i in range(3):
         for j in range(4):
             consts.MATRIX[i+22][j+46] = "DEGEL"
+    for i in range(4):
+        for j in range(2):
+            consts.MATRIX[i][j] = "SOLDIER"
+
 
 def mines_list(screen):
     create_matrix()
@@ -58,8 +65,6 @@ def spawn_mines(screen):
 # screenfile.screen_create()
 # banans()
 # spawn_mines()
-# for i in consts.MATRIX:
-#     print(i)
 
 #
 # draw_screen-
