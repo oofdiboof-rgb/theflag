@@ -23,7 +23,7 @@ FLAG_SIZE = (SCREEN_X / MATRICS_X * 4, SCREEN_Y / MATRICS_Y * 3)
 FLAG = pygame.transform.scale(FLAG_IMG, FLAG_SIZE)
 FLAG_START = (SCREEN_X - FLAG_SIZE[0], SCREEN_Y - FLAG_SIZE[1])
 
-EXPLOSION = pygame.image.load('explosion.png')
+EXPLOSION = pygame.transform.scale(pygame.image.load('explosion.png'),(SCREEN_X / MATRICS_X * 4, SCREEN_Y / MATRICS_Y * 4))
 INJURY = pygame.image.load('injury.png')
 
 SOLDIER_IMG = pygame.image.load('soldier.png')
