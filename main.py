@@ -54,25 +54,25 @@ def enter():
 
 
 def down():
-    if 0 < consts.XY_SOLDIER[1] + consts.GRID_POS_Y < consts.SCREEN_Y:
+    if consts.XY_SOLDIER[1] + consts.GRID_POS_Y <= consts.SCREEN_Y-consts.SCREEN_Y /MATRICS_Y * 4:
         consts.XY_SOLDIER[1]+=consts.GRID_POS_Y
     screenfile.screen_create()
 
 
 def up():
-    if 0<consts.XY_SOLDIER[1]-consts.GRID_POS_Y < consts.SCREEN_Y:
+    if 0<=consts.XY_SOLDIER[1]-consts.GRID_POS_Y:
         consts.XY_SOLDIER[1]-=consts.GRID_POS_Y
     screenfile.screen_create()
 
 
 def left():
-    if 0 < consts.XY_SOLDIER[0] - consts.GRID_POS_X < consts.SCREEN_X:
+    if 0 <= consts.XY_SOLDIER[0] - consts.GRID_POS_X :
         consts.XY_SOLDIER[0] -=consts.GRID_POS_X
     screenfile.screen_create()
 
 
 def right():
-    if 0<consts.XY_SOLDIER[0] + consts.GRID_POS_X<consts.SCREEN_X:
+    if consts.XY_SOLDIER[0] + consts.GRID_POS_X<=consts.SCREEN_X-consts.SCREEN_X /MATRICS_X * 2:
         consts.XY_SOLDIER[0] +=consts.GRID_POS_X
     screenfile.screen_create()
 main()
