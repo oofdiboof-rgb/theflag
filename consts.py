@@ -7,8 +7,7 @@ XRAY_COLOR = (21, 21, 21)
 MATRIX=[]
 MATRICS_X = 50
 MATRICS_Y = 25
-X_SOLDIER= 0
-Y_SOLDIER= 0
+XY_SOLDIER= [0,0]
 GRID_POS_X = SCREEN_X // MATRICS_X
 GRID_POS_Y = SCREEN_Y // MATRICS_Y
 GRASS_IMG = pygame.image.load('grass.png')
@@ -31,3 +30,7 @@ INJURY_SIZE =  (SCREEN_X / MATRICS_X * 2, SCREEN_Y / MATRICS_Y * 4)
 SOLDIER_IMG = pygame.image.load('soldier.png')
 SOLDIER_SIZE = (SCREEN_X / MATRICS_X * 2, SCREEN_Y / MATRICS_Y * 4)
 SOLDIER = pygame.transform.scale(SOLDIER_IMG, SOLDIER_SIZE)
+
+SOLDIER_NIGTH_IMG = pygame.image.load('soldier_nigth.png')
+SOLDIER_NIGTH_SIZE = (SCREEN_X / MATRICS_X * 2, SCREEN_Y / MATRICS_Y * 4)
+SOLDIER_NIGHT = pygame.transform.scale(SOLDIER_NIGTH_IMG, SOLDIER_SIZE)

@@ -13,23 +13,18 @@ def main():
         bool = True
         while bool:
             # create_matrix()
-            # soldier.create_soldier()
+            screenfile.create_soldier()
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     sys.exit()
                 if event.type == pygame.KEYDOWN:
-                    print("Keydown")
                     if event.key == pygame.K_UP:
-                        print("UP key")
                         up()
                     elif event.key == pygame.K_DOWN:
-                        print("DOWN key")
                         down()
                     elif event.key == pygame.K_LEFT:
-                        print("LEFT key")
                         left()
                     elif event.key == pygame.K_RIGHT:
-                        print("RIGHT key")
                         right()
                     elif event.key == pygame.K_RETURN:
                         enter()
@@ -41,12 +36,15 @@ def main():
 def enter():
     screen = pygame.display.set_mode((consts.SCREEN_X, consts.SCREEN_Y))
     screen.fill(XRAY_COLOR)
+
+
     for row in range(MATRICS_Y):
         for column in range(MATRICS_X):
             pygame.draw.rect(screen, (9, 99, 0),[20 * column + 1,20 * row + 1,20,20], 1)
     mine_spots = game_field.mine_spots
     for i in mine_spots:
         screen.blit(consts.MINE, ((consts.GRID_POS_X * i[1], consts.GRID_POS_Y * i[0])))
+    screenfile.create_night_soldier()
     pygame.display.flip()
     running = True
     while running:
@@ -56,24 +54,25 @@ def enter():
 
 
 def down():
-    if 0 < consts.Y_SOLDIER + consts.GRID_POS_Y < consts.SCREEN_Y:
-        consts.Y_SOLDIER += consts.GRID_POS_Y
-    pass
+    if 0 < consts.XY_SOLDIER[1] + consts.GRID_POS_Y < consts.SCREEN_Y:
+        consts.XY_SOLDIER[1]+=consts.GRID_POS_Y
+    screenfile.screen_create()
 
 
 def up():
-    if 0<consts.Y_SOLDIER-consts.GRID_POS_Y < consts.SCREEN_Y:
-        consts.Y_SOLDIER -= consts.GRID_POS_Y
-    pass
+    if 0<consts.XY_SOLDIER[1]-consts.GRID_POS_Y < consts.SCREEN_Y:
+        consts.XY_SOLDIER[1]-=consts.GRID_POS_Y
+    screenfile.screen_create()
+
 
 def left():
-    if 0 < consts.X_SOLDIER - consts.GRID_POS_X < consts.SCREEN_X:
-        consts.X_SOLDIER -= consts.GRID_POS_X
-    pass
+    if 0 < consts.XY_SOLDIER[0] - consts.GRID_POS_X < consts.SCREEN_X:
+        consts.XY_SOLDIER[0] -=consts.GRID_POS_X
+    screenfile.screen_create()
+
 
 def right():
-    if 0<consts.X_SOLDIER + consts.GRID_POS_X<consts.SCREEN_X:
-        consts.X_SOLDIER += consts.GRID_POS_X
-    pass
-
+    if 0<consts.XY_SOLDIER[0] + consts.GRID_POS_X<consts.SCREEN_X:
+        consts.XY_SOLDIER[0] +=consts.GRID_POS_X
+    screenfile.screen_create()
 main()

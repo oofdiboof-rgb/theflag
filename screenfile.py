@@ -9,6 +9,7 @@ def screen_create():
     global screen
     clock = pygame.time.Clock()
     screen.fill(NORMAL_COLOR)
+    create_soldier()
     for coords in grass_places:
         screen.blit(consts.GRASS, coords)
     # game_field.spawn_mines(screen)
@@ -30,3 +31,12 @@ def spawn_grass():
 #         screen.blit(consts.MINE, ((random.choice(range(int(consts.SCREEN_X-consts.MINE_SIZE[0])))), random.choice(range(int(consts.SCREEN_Y-consts.MINE_SIZE[1])))))
 spawn_grass()
 screen = pygame.display.set_mode((consts.SCREEN_X, consts.SCREEN_Y))
+
+def create_soldier():
+    pygame.display.flip()
+    screen.blit(consts.SOLDIER, consts.XY_SOLDIER)
+
+
+def create_night_soldier():
+    pygame.display.flip()
+    screen.blit(consts.SOLDIER_NIGHT, consts.XY_SOLDIER)
