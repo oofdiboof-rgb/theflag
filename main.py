@@ -29,8 +29,9 @@ def main():
                         soldier.enter()
                         bool = False
             if consts.MATRIX[(XY_SOLDIER[1] + (consts.GRID_POS_Y*3))//consts.GRID_POS_Y][((XY_SOLDIER[0])//consts.GRID_POS_X)]=="MINE" or consts.MATRIX[(XY_SOLDIER[1] + (consts.GRID_POS_Y*3))//consts.GRID_POS_Y][((XY_SOLDIER[0]+GRID_POS_X)//consts.GRID_POS_X)]=="MINE":
-                screenfile.lose(((XY_SOLDIER[0])//consts.GRID_POS_X), (XY_SOLDIER[1] + (consts.GRID_POS_Y*3))//consts.GRID_POS_Y)
-                print((((XY_SOLDIER[0])/consts.GRID_POS_X), (XY_SOLDIER[1] + (consts.GRID_POS_Y*3))/consts.GRID_POS_Y), (((XY_SOLDIER[0])//consts.GRID_POS_X), (XY_SOLDIER[1] + (consts.GRID_POS_Y*3))//consts.GRID_POS_Y))
+                screenfile.lose()
+            if consts.MATRIX[(XY_SOLDIER[1] + (consts.GRID_POS_Y*2))//consts.GRID_POS_Y][(((XY_SOLDIER[0])+(consts.GRID_POS_X))//consts.GRID_POS_X)] == "DEGEL" or consts.MATRIX[(XY_SOLDIER[1] + (consts.GRID_POS_Y))//consts.GRID_POS_Y][(((XY_SOLDIER[0])+(consts.GRID_POS_X))//consts.GRID_POS_X)] == "DEGEL":
+                screenfile.win()
             # if החייל נוגע במוקש - אז להתפוצץ- נפסל
             # אם החייל פוגע בדגל- אז ניצחון
 

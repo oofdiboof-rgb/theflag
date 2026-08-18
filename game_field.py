@@ -13,9 +13,9 @@ def create_matrix():
             list.append(0)
         consts.MATRIX.append(list)
         list=[]
-    for i in range(3):
+    for i in range(4):
         for j in range(4):
-            consts.MATRIX[i+22][j+46] = "DEGEL"
+            consts.MATRIX[i+21][j+46] = "DEGEL"
     for i in range(4):
         for j in range(2):
             consts.MATRIX[i][j] = "SOLDIER"
